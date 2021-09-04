@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/camping-marshmallow.png-3ff71528e91d8a03d0617d02f94d590b.stex"
+path="res://.import/camping-stick.png-2cb2dca875d1aaf5d7d28237a7356ae5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://camping-marshmallow.png"
-dest_files=[ "res://.import/camping-marshmallow.png-3ff71528e91d8a03d0617d02f94d590b.stex" ]
+source_file="res://Assets/camping-stick.png"
+dest_files=[ "res://.import/camping-stick.png-2cb2dca875d1aaf5d7d28237a7356ae5.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

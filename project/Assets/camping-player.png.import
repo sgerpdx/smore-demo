@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/camping-player.png-5603ce185bfff2c5436a8ebe96614596.stex"
+path="res://.import/camping-player.png-f46e738bcd40aebfcf263bb2487f64c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://camping-player.png"
-dest_files=[ "res://.import/camping-player.png-5603ce185bfff2c5436a8ebe96614596.stex" ]
+source_file="res://Assets/camping-player.png"
+dest_files=[ "res://.import/camping-player.png-f46e738bcd40aebfcf263bb2487f64c2.stex" ]
 
 [params]
 
