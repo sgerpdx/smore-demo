@@ -1,26 +1,28 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Campfire.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://Scenes/FlamesObject.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Campfire.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.75, 61.25 )
 
-[node name="Campfire" type="Node2D"]
+[node name="Campfire" type="Area2D"]
+z_index = -1
+collision_layer = 2
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="FlamesObject" type="StaticBody2D" parent="."]
-script = ExtResource( 2 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlamesObject"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="FlamesObject"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "flames"
-frame = 5
+frame = 4
 playing = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FlamesObject"]
+[connection signal="body_entered" from="." to="." method="_on_Campfire_body_entered"]
