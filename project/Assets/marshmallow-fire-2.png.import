@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire-02.png-f0a7d78d485d6d620f971d8c4ccc2a03.stex"
+path="res://.import/marshmallow-fire-2.png-181c3a3f466d623874dc6f3ca897abf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fire-02.png"
-dest_files=[ "res://.import/fire-02.png-f0a7d78d485d6d620f971d8c4ccc2a03.stex" ]
+source_file="res://Assets/marshmallow-fire-2.png"
+dest_files=[ "res://.import/marshmallow-fire-2.png-181c3a3f466d623874dc6f3ca897abf0.stex" ]
 
 [params]
 
