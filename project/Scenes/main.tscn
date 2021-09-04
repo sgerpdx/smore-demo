@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/camping-groundtile.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Campfire.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "camping-groundtile.png 0"
@@ -30,3 +31,6 @@ tile_data = PoolIntArray( 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 698.705, 431.417 )
+
+[node name="Campfire" parent="." instance=ExtResource( 3 )]
+position = Vector2( 273.724, 458.723 )

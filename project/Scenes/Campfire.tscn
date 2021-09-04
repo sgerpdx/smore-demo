@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Campfire.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scenes/FlamesObject.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.75, 61.25 )
+
+[node name="Campfire" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FlamesObject" type="StaticBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlamesObject"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FlamesObject"]
+frames = ExtResource( 1 )
+animation = "flames"
+frame = 5
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FlamesObject"]
