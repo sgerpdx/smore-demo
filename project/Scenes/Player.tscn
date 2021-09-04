@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 [node name="Arm" type="KinematicBody2D" parent="Player"]
 position = Vector2( -2.77849, -8.16385 )
 script = ExtResource( 5 )
+speed = 800
 
 [node name="Sprite" type="Sprite" parent="Player/Arm"]
 position = Vector2( -24.9453, -0.445404 )

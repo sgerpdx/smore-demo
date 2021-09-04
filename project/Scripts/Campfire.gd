@@ -1,14 +1,17 @@
 extends Area2D
 
 onready var marshmallow = get_parent().get_node("player/Player/Arm/Sprite2/Marshmallow_K2D/camping-marshmallow")
+var marshFire = load("res://Scenes/Fire.tscn")
+
+var donenessSpeed = 1
+var burningSpeed = 5
+
 var cooking = false
 var burnt = false
 var doneness = 0
 var burnValue = 0
 var burnThreshold = 5
 var burnColorDict = {}
-
-var marshFire = load("res://Scenes/Fire.tscn")
 
 func _ready():
 	burnColorDict[0] = Color(1, 1, 1)
@@ -23,24 +26,27 @@ func _ready():
 	burnColorDict[9] = Color(0, 0, 0)
 
 func _on_Campfire_body_entered(body):
-	cooking = true
+	if body.get_name() == "Marshmallow_K2D":
+		cooking = true
 	
 func _on_Campfire_body_exited(body):
-	cooking = false
+	if body.get_name() == "Marshmallow_K2D":
+		cooking = false
 	burnValue = 0
 
 func _process(delta):
 	if cooking:
 		if doneness < 9: 
-			doneness += 0.25 * delta
+			doneness += donenessSpeed * delta
 		if not burnt:
-			burnValue += 5 * delta
+			burnValue += burningSpeed * delta
+			marshmallow.modulate = burnColorDict[int(round(doneness))]
 	if burnValue >= burnThreshold and not burnt:
 		print("Your marshmallow is on fire!")
 		marshmallow.add_child(marshFire.instance())
+		marshmallow.modulate = Color(1, 1, 1)
 		burnt = true
-		
-	marshmallow.modulate = burnColorDict[int(round(doneness))]
+
 	
 
 
