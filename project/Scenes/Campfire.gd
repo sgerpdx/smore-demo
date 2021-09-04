@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var player = get_parent().get_node("player/Player/Arm/Sprite2/Marshmallow_K2D/camping-marshmallow")
+onready var marshmallow = get_parent().get_node("player/Player/Arm/Sprite2/Marshmallow_K2D/camping-marshmallow")
 var burning = false
 var doneness = 0
 var burnValue = 0
@@ -26,6 +26,7 @@ func _process(delta):
 		print("Done:", doneness)
 		print("Burn:", burnValue)
 	if burnValue >= burnThreshold:
+		marshmallow.modulate = Color(0, 0, 1)
 		print("Your marshmallow is on fire!")
 
 
