@@ -36,7 +36,19 @@ position = Vector2( 698.705, 431.417 )
 [node name="Campfire" parent="." instance=ExtResource( 3 )]
 position = Vector2( 273.724, 458.723 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 589.643, 246.425 )
 z_index = -2
 texture = ExtResource( 4 )
+
+[node name="Feedback" type="Node2D" parent="."]
+
+[node name="SkyText" type="Label" parent="Feedback"]
+margin_left = 147.244
+margin_top = 60.408
+margin_right = 495.244
+margin_bottom = 74.408
+text = "You'll have to get closer to the fire, but not too close..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
