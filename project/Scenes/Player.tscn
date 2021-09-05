@@ -31,23 +31,23 @@ position = Vector2( -2.77849, -8.16385 )
 script = ExtResource( 5 )
 speed = 800
 
-[node name="Sprite" type="Sprite" parent="Player/Arm"]
+[node name="ArmSprite" type="Sprite" parent="Player/Arm"]
 position = Vector2( -24.9453, -0.445404 )
 scale = Vector2( 2.08, 1 )
 texture = ExtResource( 3 )
 
-[node name="Sprite2" type="Sprite" parent="Player/Arm"]
+[node name="Stick" type="Sprite" parent="Player/Arm"]
 position = Vector2( -95.7716, 0.445374 )
 rotation = 1.5708
 texture = ExtResource( 4 )
 
-[node name="Marshmallow_K2D" type="KinematicBody2D" parent="Player/Arm/Sprite2"]
+[node name="Marshmallow_K2D" type="KinematicBody2D" parent="Player/Arm/Stick"]
 position = Vector2( 0.445435, 44.9904 )
 
-[node name="camping-marshmallow" type="Sprite" parent="Player/Arm/Sprite2/Marshmallow_K2D"]
+[node name="camping-marshmallow" type="Sprite" parent="Player/Arm/Stick/Marshmallow_K2D"]
 position = Vector2( -0.969696, -0.265869 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Arm/Sprite2/Marshmallow_K2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Arm/Stick/Marshmallow_K2D"]
 position = Vector2( -0.445435, 0 )
 shape = SubResource( 2 )

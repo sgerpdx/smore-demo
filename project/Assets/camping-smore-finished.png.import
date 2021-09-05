@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/smore-background.png-8537758667c5634c4a58b86a8e21aeed.stex"
+path="res://.import/camping-smore-finished.png-67c5333785986d7a4a8a396aec6434ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/smore-background.png"
-dest_files=[ "res://.import/smore-background.png-8537758667c5634c4a58b86a8e21aeed.stex" ]
+source_file="res://Assets/camping-smore-finished.png"
+dest_files=[ "res://.import/camping-smore-finished.png-67c5333785986d7a4a8a396aec6434ff.stex" ]
 
 [params]
 

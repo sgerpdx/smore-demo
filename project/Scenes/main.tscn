@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/camping-groundtile.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Campfire.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/smore-background.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/camping-tent.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "camping-groundtile.png 0"
@@ -34,7 +36,7 @@ tile_data = PoolIntArray( 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0
 position = Vector2( 698.705, 431.417 )
 
 [node name="Campfire" parent="." instance=ExtResource( 3 )]
-position = Vector2( 273.724, 458.723 )
+position = Vector2( 350, 458.723 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 589.643, 246.425 )
@@ -52,3 +54,11 @@ text = "You'll have to get closer to the fire, but not too close..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Table" parent="." instance=ExtResource( 5 )]
+position = Vector2( 929.822, 438.846 )
+z_index = -1
+
+[node name="camping-tent" type="Sprite" parent="."]
+position = Vector2( 90.3721, 439.565 )
+texture = ExtResource( 6 )

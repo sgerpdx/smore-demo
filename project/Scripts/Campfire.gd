@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var marshmallow = get_parent().get_node("player/Player/Arm/Sprite2/Marshmallow_K2D/camping-marshmallow")
+onready var marshmallow = get_parent().get_node("player/Player/Arm/Stick/Marshmallow_K2D/camping-marshmallow")
 onready var message = get_parent().get_node("Feedback/SkyText")
 onready var game = get_parent()
 var marshFire = load("res://Scenes/Fire.tscn")
