@@ -2,7 +2,6 @@ extends Area2D
 
 onready var marshmallow = get_parent().get_node("player/Player/Arm/Stick/Marshmallow_K2D/camping-marshmallow")
 onready var message = get_parent().get_node("Feedback/SkyText")
-onready var game = get_parent()
 var marshFire = load("res://Scenes/Fire.tscn")
 
 var donenessSpeed = 1
@@ -46,7 +45,7 @@ func _process(delta):
 			marshmallow.modulate = burnColorDict[int(round(doneness))]
 	if burnValue >= burnThreshold and not burnt:
 		print("Your marshmallow is on fire!")
-		message.text = "Your marshmallow is burnt -- press the space bar to start over"
+		message.text = "Oh no, your marshmallow is burnt --\nPress the space bar to start over"
 		marshmallow.add_child(marshFire.instance())
 		marshmallow.modulate = Color(1, 1, 1)
 		burnt = true
