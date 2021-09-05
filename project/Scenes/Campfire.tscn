@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Campfire.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Assets/ambience.wav" type="AudioStream" id=2]
 [ext_resource path="res://Scripts/Campfire.gd" type="Script" id=3]
+[ext_resource path="res://Assets/crackling.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/fire-woosh.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sizzle.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.75, 61.25 )
@@ -22,7 +26,25 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "flames"
+frame = 2
 playing = true
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 3.5636, -8.90897 )
+stream = ExtResource( 2 )
+volume_db = -6.0
+autoplay = true
+
+[node name="Crackling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -6.0
+autoplay = true
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Sizzle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="body_entered" from="." to="." method="_on_Campfire_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Campfire_body_exited"]

@@ -27,13 +27,14 @@
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -40.7053, 24.1042 )
+z_index = -1
 tile_set = SubResource( 1 )
 cell_size = Vector2( 160, 160 )
 format = 1
 tile_data = PoolIntArray( 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 698.705, 431.417 )
+position = Vector2( 600, 431.417 )
 
 [node name="Campfire" parent="." instance=ExtResource( 3 )]
 position = Vector2( 350, 458.723 )
@@ -57,7 +58,7 @@ __meta__ = {
 
 [node name="Table" parent="." instance=ExtResource( 5 )]
 position = Vector2( 929.822, 438.846 )
-z_index = -1
+z_index = -2
 
 [node name="camping-tent" type="Sprite" parent="."]
 position = Vector2( 90.3721, 439.565 )

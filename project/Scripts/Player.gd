@@ -2,12 +2,22 @@ extends KinematicBody2D
 
 
 var velocity = Vector2(0, 0)
+onready var body = get_node("Sprite")
+onready var arm = get_node("Arm")
+
 const decelerationFactor = 1
 const speed = 300
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(scale, position)
+	if(position.x > 15):
+		body.scale.x = -1
+		arm.z_index = -1
+	if(position.x < 15):
+		body.scale.x = 1
+		arm.z_index = 0
 	if Input.is_action_pressed("right") and Input.is_action_pressed("left"):
 		velocity.x = 0
 	elif Input.is_action_pressed("left"):

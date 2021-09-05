@@ -3,6 +3,9 @@ extends Area2D
 onready var marshmallow = get_parent().get_node("player/Player/Arm/Stick/Marshmallow_K2D/camping-marshmallow")
 onready var message = get_parent().get_node("Feedback/SkyText")
 onready var game = get_parent()
+onready var sizzle = get_parent().get_node("Campfire/Sizzle")
+onready var woosh = get_parent().get_node("Campfire/Whoosh")
+
 var marshFire = load("res://Scenes/Fire.tscn")
 
 var donenessSpeed = 1
@@ -30,10 +33,12 @@ func _ready():
 func _on_Campfire_body_entered(body):
 	if body.get_name() == "Marshmallow_K2D":
 		cooking = true
+		sizzle.play()
 	
 func _on_Campfire_body_exited(body):
 	if body.get_name() == "Marshmallow_K2D":
 		cooking = false
+		sizzle.stop()
 	burnValue = 0
 
 
@@ -49,6 +54,7 @@ func _process(delta):
 		message.text = "Your marshmallow is burnt -- press the space bar to start over"
 		marshmallow.add_child(marshFire.instance())
 		marshmallow.modulate = Color(1, 1, 1)
+		woosh.play()
 		burnt = true
 		
 	if Input.is_action_pressed("space"):
