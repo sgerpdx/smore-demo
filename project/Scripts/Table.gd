@@ -14,10 +14,10 @@ func _on_Table_body_entered(body):
 		tableSprite.add_child(marshmallow)
 		marshmallow.position.x = -8
 		marshmallow.position.y = -40
-		message.text = "Dude, congrats!!! \nYou've made a magnificent s'more!\n(hit the space bar to make more)"
+		message.text = "Dude, congrats!!! \nYou've made a magnificent s'more!\n---\nHit the space bar to make more"
 		
 	elif body.get_name() == "Marshmallow_K2D" and campfire.doneness <= 0:
-		message.text = "You should probably cook your marshmallow just a bit, first..."
+		message.text = "You should probably cook your marshmallow first..."
 		
 	elif body.get_name() == "Marshmallow_K2D" and campfire.burnt:
-		message.text = "Totally burnt is rad, but won't make for a good s'more --\nPress the space bar to try again..."
+		message.text = "Totally burnt is rad, but won't make for a good s'more\nPress the space bar to try again..."

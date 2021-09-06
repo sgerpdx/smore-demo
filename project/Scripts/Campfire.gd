@@ -2,6 +2,7 @@ extends Area2D
 
 onready var marshmallow = get_parent().get_node("player/Player/Arm/Stick/Marshmallow_K2D/camping-marshmallow")
 onready var message = get_parent().get_node("Feedback/SkyText")
+onready var instructions = get_parent().get_node("Instructions/ground-text")
 onready var sizzle = get_parent().get_node("Campfire/Sizzle")
 onready var woosh = get_parent().get_node("Campfire/Whoosh")
 
@@ -50,7 +51,7 @@ func _process(delta):
 			marshmallow.modulate = burnColorDict[int(round(doneness))]
 	if burnValue >= burnThreshold and not burnt:
 		print("Your marshmallow is on fire!")
-		message.text = "Oh no, your marshmallow is burnt --\nPress the space bar to start over"
+		message.text = "Oh no, your marshmallow is burnt! --\nPress the space bar to start over"
 		marshmallow.add_child(marshFire.instance())
 		marshmallow.modulate = Color(1, 1, 1)
 		woosh.play()
@@ -60,5 +61,9 @@ func _process(delta):
 		get_tree().reload_current_scene()
 	
 
-
+func _on_helpbutton_mouse_entered():
+	instructions.visible = true
+	
+func _on_helpbutton_mouse_exited():
+	instructions.visible = false
 

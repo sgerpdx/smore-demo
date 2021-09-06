@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/camping-groundtile.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Assets/smore-background.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Table.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/camping-tent.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Help_2D.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Feedback.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "camping-groundtile.png 0"
@@ -22,6 +24,9 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.8515, 13.6323 )
 
 [node name="root" type="Node2D"]
 
@@ -40,22 +45,23 @@ position = Vector2( 600, 431.417 )
 position = Vector2( 350, 458.723 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 589.643, 245.366 )
+position = Vector2( 590.702, 244.307 )
 z_index = -2
 texture = ExtResource( 4 )
 
 [node name="Feedback" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
 [node name="SkyText" type="Label" parent="Feedback"]
-margin_left = 11.6432
-margin_top = 10.4054
-margin_right = 534.643
-margin_bottom = 126.405
-text = "How about a s'more?
-* use the left and right arrows to move closer to or farther from the fire
-* and the up and down arrows to control your arm 
-* then head to the table for final assembly
-* be careful not to let your marshmallow burn (hit space bar to restart if you do)"
+margin_left = 155.749
+margin_top = 229.714
+margin_right = 678.749
+margin_bottom = 345.714
+text = "Nothing's better than making the perfect s'more!
+---
+Roast your marshmallow, but be careful of burning! Then head over to the table to assemble your masterpiece.
+---
+Good luck!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,3 +85,35 @@ z_index = -2
 [node name="camping-tent" type="Sprite" parent="."]
 position = Vector2( 90.3721, 439.565 )
 texture = ExtResource( 6 )
+
+[node name="help-button" type="Area2D" parent="."]
+position = Vector2( 991.713, 580.097 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="help-button"]
+position = Vector2( -16.559, -7.24457 )
+scale = Vector2( 0.655021, 0.655021 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="help-button"]
+position = Vector2( -16.379, -7.55963 )
+shape = SubResource( 2 )
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="ground-text" type="Label" parent="Instructions"]
+visible = false
+margin_left = 133.086
+margin_top = 554.054
+margin_right = 847.086
+margin_bottom = 595.054
+text = "Use the RIGHT > and < LEFT arrows to move horizonally, and the UP and DOWN arrows to control the arm. Position the marshmallow close to the fire to cook it."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="help-button" to="Campfire" method="_on_helpbutton_mouse_entered"]
+[connection signal="mouse_exited" from="help-button" to="Campfire" method="_on_helpbutton_mouse_exited"]

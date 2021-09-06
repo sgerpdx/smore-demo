@@ -23,7 +23,7 @@ func _process(delta):
 	elif Input.is_action_pressed("left"):
 		velocity.x = -speed
 	elif Input.is_action_pressed("right"):
-		velocity.x = speed
+		velocity.x = speed	
 	else :
 		velocity.x = 0
 	move_and_slide(velocity)
